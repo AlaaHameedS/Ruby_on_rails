@@ -1,8 +1,12 @@
 class User < ApplicationRecord
-    validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
-    validates_length_of :username, :minimum => 5
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :rememberable, :validatable
+    #validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+    #validates_length_of :username, :minimum => 5
     #validates :name , presence :true
-    validates :identifier , presence: true 
+    #validates :identifier , presence: true 
     #validates :greeting ,with => /[w+]/
     has_one :Work
 

@@ -1,3 +1,3 @@
 class Author < ApplicationRecord
-    has_many:Book
+    has_many :Book
 end

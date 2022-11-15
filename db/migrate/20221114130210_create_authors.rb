@@ -5,6 +5,9 @@ class CreateAuthors < ActiveRecord::Migration[7.0]
       t.string :lastname , null: false , index: true
       t.string :address , null: false , index: true
 
+
+      
+
       t.timestamps
     end
   end

@@ -6,6 +6,16 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :publisher , null: false , index: true
       t.string :year , null: false , index: true 
 
+
+      def change
+        create_table :posts do |t|
+          t.text :body
+          t.references :author, foreign_key: true
+    
+          t.timestamps
+        end
+      end
+
       t.timestamps
     end
   end
